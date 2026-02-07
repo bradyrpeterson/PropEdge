@@ -16,12 +16,15 @@ That's it. Everything else is automatic.
 
 import os, sys, json, time, statistics
 from datetime import datetime, date, timedelta
+from dotenv import load_dotenv
 from collections import defaultdict
 
 # ============================================================================
 #  PASTE YOUR API KEY HERE (get free at https://the-odds-api.com)
 # ============================================================================
-ODDS_API_KEY = "YOUR_ODDS_API_KEY_HERE"
+load_dotenv()
+ODDS_API_KEY = os.getenv("API_KEY")
+print(f"DEBUG KEY: [{ODDS_API_KEY}]")
 # ============================================================================
 
 import requests
